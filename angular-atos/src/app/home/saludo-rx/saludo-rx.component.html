@@ -1,0 +1,4 @@
+<h2>Saludo RX</h2>
+<input type="text" [placeholder]="mensaje" [formControl]='usuario'>
+<button type="button" (click)=" onBorrar($event) ">Borrar</button>
+<p>Hola {{ usuario.value ? usuario.value : 'amigo, dime tu nombre'}}</p>

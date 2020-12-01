@@ -1,0 +1,4 @@
+<h2>Saludo</h2>
+<input type="text" [placeholder]="mensaje" [(ngModel)]='usuario'>
+<button type="button" (click)=" onBorrar($event) ">Borrar</button>
+<p>Hola {{ usuario ? usuario : 'amigo, dime tu nombre'}}</p>

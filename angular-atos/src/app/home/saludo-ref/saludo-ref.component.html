@@ -1,0 +1,5 @@
+<h2>Saludo con Referencias Locales</h2>
+<input type="text" placeholder="Dime tu nombre" #usuario>
+<button type="button" (click)=" usuario.value = usuario.value ">Salvar</button>
+<button type="button" (click)=" usuario.value = '' ">Borrar</button>
+<p>Hola {{ usuario.value ? usuario.value : 'amigo, dime tu nombre'}}</p>
