@@ -1,6 +1,6 @@
 function hacerAsyc(t) {
     return new Promise( (resolve, reject) => {
-        setTimeout(()=>{
+        setTimeout(() => {
             const n = Math.random()
             if(n > 0.5) {
                 let user = 'Pepe'
@@ -29,3 +29,15 @@ hacerAsyc(1100).then(
 ).catch(
     err => console.log(`Error ${err}`)
 )
+
+
+async function main () {
+    try {
+        const resp =  await hacerAsyc(2000)
+        console.log(`Hola ${resp}`)
+    } catch (err) {
+        console.log(`Error ${err}`)
+    }
+}
+
+main()
