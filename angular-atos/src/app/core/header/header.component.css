@@ -1,5 +1,6 @@
 :host {
     display: flex;
+    flex-direction: column;
     background-color: brown;
     color: bisque;
     width: 100%;
@@ -10,5 +11,5 @@ header {
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 0rem 2rem;
 }

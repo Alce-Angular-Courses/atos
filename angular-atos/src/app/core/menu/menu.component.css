@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+    display: flex;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 0rem 1rem;
+}

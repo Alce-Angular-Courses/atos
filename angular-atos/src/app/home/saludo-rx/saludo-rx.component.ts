@@ -17,7 +17,7 @@ export class SaludoRxComponent implements OnInit {
       this.usuario.setValue('Pepe')
   }
 
-  onBorrar(): void {
+  onBorrar(ev: Event): void {
     console.log(this.usuario);
     this.usuario.reset();
   }
