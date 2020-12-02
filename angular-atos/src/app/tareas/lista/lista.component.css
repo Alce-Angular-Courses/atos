@@ -1,0 +1,16 @@
+ul {
+    list-style: none;
+}
+
+.boton {
+    cursor: pointer;
+}
+
+span {
+    padding: 0 1rem;
+}
+
+.completo {
+    font-style: italic;
+    text-decoration: line-through;
+}
