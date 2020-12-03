@@ -1,6 +1,6 @@
 import { Curso, ICurso, Turno } from './alumno';
 
-export const TURNO: Array<Turno> = [
+export const TURNOS: Array<Turno> = [
     {id: 'M', nombre: 'Mañana', info: '9:00-14:00'},
     {id: 'T', nombre: 'Tarde', info: '16:00-20:00'},
     {id: 'C', nombre: 'Completo', info: '9:00-18:00'}
