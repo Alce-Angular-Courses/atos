@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
     {path: 'home', name: 'Home'},
     {path: 'tareas', name: 'Tareas'},
     {path: 'usuarios', name: 'Usuarios'},
+    {path: 'cursos', name: 'Cursos'},
     {path: 'about', name: 'About'}
   ];
   }
