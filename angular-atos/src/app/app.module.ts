@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 
+
 registerLocaleData(localeEs);
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ registerLocaleData(localeEs);
     CoreModule,
     HomeModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'Es'}],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'Es'}
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })

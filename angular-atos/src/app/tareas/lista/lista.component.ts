@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from 'src/app/models/tarea';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'ato-lista',
@@ -10,12 +11,14 @@ export class ListaComponent implements OnInit {
   tarea: Tarea;
   aTareas: Array<Tarea>;
   store: string;
-  constructor() { }
+
+  constructor(public st: StoreService) { }
 
   ngOnInit(): void {
     this.store = 'tareas';
-    this.aTareas = localStorage.getItem(this.store)
-      ? JSON.parse(localStorage.getItem(this.store)) : [];
+    this.aTareas = this.st.getTareas();
+    /* this.aTareas = localStorage.getItem(this.store)
+      ? JSON.parse(localStorage.getItem(this.store)) : []; */
     this.tarea = new Tarea();
   }
 
@@ -37,7 +40,8 @@ export class ListaComponent implements OnInit {
     this.save();
   }
   private save(): void {
-    localStorage.setItem(this.store, JSON.stringify(this.aTareas));
+    this.st.setTareas(this.aTareas);
+    /* localStorage.setItem(this.store, JSON.stringify(this.aTareas)); */
   }
 
 }

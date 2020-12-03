@@ -5,8 +5,6 @@ import { TareasRoutingModule } from './tareas-routing.module';
 import { TareasComponent } from './tareas.component';
 import { ListaComponent } from './lista/lista.component';
 
-
-
 @NgModule({
   declarations: [TareasComponent, ListaComponent],
   imports: [
