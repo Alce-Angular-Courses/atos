@@ -3,7 +3,7 @@
     <h3>Lista de usuarios</h3>
     <ul>
         <li *ngFor="let item of aUsuarios">
-            <ato-item></ato-item>
+            <ato-item [item]="item" (borrar)="onBorrar($event)"></ato-item>
         </li>
     </ul>
 </div>

@@ -11,7 +11,7 @@ export class UsuariosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.aUsuarios = []
+    this.aUsuarios = [];
   }
 
   onAdd(nuevo: Usuario): void {
@@ -20,4 +20,10 @@ export class UsuariosComponent implements OnInit {
     console.log(this.aUsuarios);
   }
 
+  onBorrar(id: string | any): void {
+    this.aUsuarios = this.aUsuarios.filter(
+      // tslint:disable-next-line: triple-equals
+      item => item.id != id
+    );
+  }
 }
