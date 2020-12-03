@@ -22,4 +22,7 @@ export class FormTdComponent implements OnInit {
     console.log(this.form);
   }
 
+  enviar(): void {
+    console.log('Enviando...', this.alumno);
+  }
 }
