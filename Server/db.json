@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "nombre": "Elena",
+      "email": "elens@acme.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Rosa",
+      "email": "rosa@algo.com"
+    },
+    {
+      "id": 4,
+      "nombre": "Ramon",
+      "email": "rr@acme.es"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

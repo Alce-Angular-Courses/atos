@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../models/usuario';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'ato-usuarios',
@@ -8,22 +9,32 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuariosComponent implements OnInit {
   aUsuarios: Array<Usuario>;
-  constructor() { }
+  constructor(public us: UsuariosService) { }
 
   ngOnInit(): void {
-    this.aUsuarios = [];
+    this.us.readAll().subscribe(
+      resp => this.aUsuarios = resp
+    )
+
   }
 
   onAdd(nuevo: Usuario): void {
-    nuevo.id = this.aUsuarios.length + 1;
-    this.aUsuarios.push(nuevo);
-    console.log(this.aUsuarios);
+    this.us.create(nuevo).subscribe(
+      resp => {
+        this.aUsuarios.push(resp);
+        console.log(this.aUsuarios);
+      }
+    );
   }
 
   onBorrar(id: string | any): void {
-    this.aUsuarios = this.aUsuarios.filter(
-      // tslint:disable-next-line: triple-equals
-      item => item.id != id
+    this.us.delete(id).subscribe(
+      resp => {
+        this.aUsuarios = this.aUsuarios.filter(
+        // tslint:disable-next-line: triple-equals
+        item => item.id != id
+        );
+      }
     );
   }
 }

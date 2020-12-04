@@ -1,0 +1,15 @@
+<h2>Busqueda de libros en Googl con un servicio propio</h2>
+<input type="text" name="" placeholder="Clave de busque" [(ngModel)]="clave">
+<button type="button" (click)="onBuscar()">Buscar</button>
+<button type="button" (click)="onBuscarRx()">Buscar Rx</button>
+<div>
+    <h3>Lista de libros</h3>
+    <ul>
+        <li *ngFor="let item of aLibros">
+            {{item.id}} - {{item.autores}} - {{item.titulo}}
+        </li>
+    </ul>
+</div>
+<div class="mensajes"> 
+    {{ mensaje }}
+</div>

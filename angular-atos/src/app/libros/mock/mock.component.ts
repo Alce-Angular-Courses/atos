@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Libro } from 'src/app/models/libro';
 import { LibrosService } from 'src/app/services/libros.service';
 
@@ -8,10 +8,11 @@ import { LibrosService } from 'src/app/services/libros.service';
   templateUrl: './mock.component.html',
   styleUrls: ['./mock.component.css']
 })
-export class MockComponent implements OnInit {
+export class MockComponent implements OnInit, OnDestroy {
   clave: string;
   aLibros: Array<Libro>;
   aLibros$: Observable<Array<Libro>>;
+  aLibrosSubscription: Subscription;
   mensaje: string;
   buscando: boolean;
   constructor(public ls: LibrosService) { }
@@ -21,6 +22,10 @@ export class MockComponent implements OnInit {
     this.mensaje = '';
     this.aLibros = [];
     this.buscando = false;
+  }
+
+  ngOnDestroy(): void {
+    this.aLibrosSubscription.unsubscribe();
   }
 
   onBuscar(): void {
@@ -52,7 +57,7 @@ export class MockComponent implements OnInit {
     }
     this.buscando = true;
     this.aLibros$ = this.ls.buscarMockRx(this.clave);
-    this.aLibros$.subscribe(
+    this.aLibrosSubscription = this.aLibros$.subscribe(
       resp => {
         this.aLibros = resp;
         this.buscando = false;
